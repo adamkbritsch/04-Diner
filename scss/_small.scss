@@ -44,32 +44,99 @@ header {
 }
 
 nav {
+  position: relative;
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    width: 100%;
+    margin: 0;
+    padding: 0.75rem $gutter;
+    border: 1px solid $borderColor;
+    border-radius: 0.5rem;
+    background-color: transparent;
+    color: $textPrimary;
+    font: inherit;
+    font-weight: $boldWeight;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: background-color 150ms, color 150ms, border-color 150ms;
+    &:hover,
+    &:focus-visible {
+      background-color: rgba($accentHighlight, 0.12);
+      border-color: lighten($borderColor, 8%);
+      color: lighten($accentHighlight, 8%);
+    }
+  }
+  .nav-toggle__icon {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+  .nav-toggle__label {
+    font-size: 0.9rem;
+  }
+  .nav-toggle__icon--close,
+  .nav-toggle__label--close {
+    display: none;
+  }
   ul {
     list-style-type: none;
     padding: 0;
-    margin: 0;
-    display: flex;
+    margin: 0.5rem 0 0;
+    display: none;
+    flex-direction: column;
+    background-color: $bgSurface;
+    border: 1px solid $borderColor;
+    border-radius: 0.5rem;
+    box-shadow: 0 12px 20px rgba($textPrimary, 0.12);
+    overflow: hidden;
     li {
-      flex: 1;
-      border-right: 1px solid $borderColor;
+      border-bottom: 1px solid $borderColor;
+      &:last-child {
+        border-bottom: 0;
+      }
     }
-  }
-  li.active {
-    background-color: $accentPrimary;
   }
   a {
     display: block;
-    padding: 0.75rem;
+    padding: 0.75rem $gutter;
     color: $textPrimary;
-    text-align: center;
+    text-align: left;
     text-decoration: none;
+    transition: color 150ms, background-color 150ms;
     &:hover {
       color: lighten($accentHighlight, 8%);
       background-color: rgba($accentPrimary, 0.18);
     }
   }
-  li.active a {
-    color: #fff;
+  li.active {
+    background-color: $accentPrimary;
+    a {
+      color: #fff;
+    }
+  }
+  &.is-open {
+    .nav-toggle {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-color: transparent;
+      background-color: rgba($accentHighlight, 0.12);
+    }
+    .nav-toggle__icon--menu,
+    .nav-toggle__label--menu {
+      display: none;
+    }
+    .nav-toggle__icon--close,
+    .nav-toggle__label--close {
+      display: inline;
+    }
+    ul {
+      display: flex;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
   }
 }
 

@@ -42,7 +42,13 @@
 
     <div id="navWrapper">
         <nav>
-            <ul>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primaryNav">
+                <span class="nav-toggle__icon nav-toggle__icon--menu" aria-hidden="true">&#9776;</span>
+                <span class="nav-toggle__icon nav-toggle__icon--close" aria-hidden="true">&times;</span>
+                <span class="nav-toggle__label nav-toggle__label--menu">Menu</span>
+                <span class="nav-toggle__label nav-toggle__label--close">Close</span>
+            </button>
+            <ul id="primaryNav">
                 <li class="active"><a href="#">Menu</a></li>
                 <li><a href="#">Specials</a></li>
                 <li><a href="#">Visit</a></li>
