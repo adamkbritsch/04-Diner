@@ -1,0 +1,18 @@
+header, nav, main, footer, {
+    max-width: 60rem;
+    margin: auto;
+}
+
+
+div.allcards {
+
+section {
+    flex-basis: calc(33.333% - (($gutter*2)/3));
+
+}
+}
+
+footer div {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}

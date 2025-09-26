@@ -1,0 +1,25 @@
+// Retro diner palette
+// Base surfaces
+$bgPrimary: #fff7ea;   // warm cream backdrop
+$bgSurface: #ffe8d1;   // soft peach panels
+
+// Accents
+$accentPrimary: #d62828;   // cherry-red booth vinyl
+$accentHighlight: #0c9ea6; // aqua neon trim
+
+// Text and borders
+$textPrimary: #3b2a20;   // rich espresso text
+$textSecondary: #6d5b4c; // muted cocoa copy
+$borderColor: #e4cdb5;   // subtle counter edge
+
+// Back-compat variables used across partials
+$primaryColor: $accentHighlight;
+$secondaryColor: $accentPrimary;
+$fontColor: $textPrimary;
+
+$defaultFont: "Poppins", "Inter", sans-serif;
+$lightWeight:300;
+$normalWeight:500;
+$boldWeight:700;
+
+$gutter: 16px;
